@@ -8,5 +8,5 @@
       state: directory
   - name: copy room assistant config from template for docker
     template:
-      src: "~/ansible/room-assistant/config/template/local.yml.j2"
+      src: "/etc/room-assistant/config/template/local.yml.j2"
       dest: "/etc/room-assistant/config/local.yml"
