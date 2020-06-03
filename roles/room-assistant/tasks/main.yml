@@ -77,7 +77,7 @@
     content: "{{ room_assistant_global_config | to_nice_yaml }}"
 - name: Create config file
   when: room_assistant_config is defined
-  copy:https://github.com/ensjens/ansible-playbooks
+  copy:
     dest: "~/room-assistant/config/local.yml"
     content: "{{ room_assistant_config | to_nice_yaml }}"
 - name: copy room assistant config from template
