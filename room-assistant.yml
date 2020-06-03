@@ -1,4 +1,5 @@
 ---
+# Hosts file is saved in /etc/ansible/hosts
 - hosts: raspberrypizerow
   pre_tasks:
     # ensures that network is stable
