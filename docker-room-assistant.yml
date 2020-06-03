@@ -1,5 +1,6 @@
 ---
 - hosts: raspberrypi3
+  tasks: 
   - name: copy room assistant config from template for docker
     template:
       src: "~/ansible/room-assistant/config/template/local.yml.j2"
