@@ -82,8 +82,8 @@
     content: "{{ room_assistant_config | to_nice_yaml }}"
 - name: copy room assistant config from template
   template:
-    src: ~/ansible/room-assistant/config/template/local.yml.j2
-    dest: ~/room-assistant/config/local.yml
+    src: "~/ansible/room-assistant/config/template/local.yml.j2"
+    dest: "~/room-assistant/config/local.yml"
 - name: Find room-assistant
   find:
     file_type: link
