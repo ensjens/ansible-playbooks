@@ -1,6 +1,11 @@
 ---
 - hosts: raspberrypi3
-  tasks: 
+  become: yes
+  tasks:
+  - name: create config directory
+    file:
+      path: /etc/room-assistant/config
+      state: directory
   - name: copy room assistant config from template for docker
     template:
       src: "~/ansible/room-assistant/config/template/local.yml.j2"
