@@ -3,3 +3,8 @@
 - name: Install inotify-tools
   apt:
     name: inotify-tools
+
+- name: Create directory for shell script
+  file:
+    name="~/piholesync"
+    state=directory
