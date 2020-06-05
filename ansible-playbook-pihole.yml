@@ -1,0 +1,8 @@
+#!/usr/bin ansible-playbook -i /etc/ansible/hosts --become
+
+- name: Ansible Playbook for configuring Pi-Hole on Raspberry Pi
+  hosts: pihole
+  roles:
+    - pi
+  remote_user: pi
+  become: yes
