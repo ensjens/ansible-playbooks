@@ -6,5 +6,5 @@
 
 - name: Create directory for shell script
   file:
-    name="$HOME/piholesync"
+    name="/home/pi/piholesync"
     state=directory
