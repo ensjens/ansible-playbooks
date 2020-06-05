@@ -51,6 +51,3 @@
   when: not pihole_installed
   tags: pihole
   
-- name: Install inotify
-  apt:
-    name: inotify-tools

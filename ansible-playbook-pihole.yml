@@ -4,5 +4,6 @@
   hosts: pihole
   roles:
     - pihole
+    - piholesync
   remote_user: pi
   become: yes
