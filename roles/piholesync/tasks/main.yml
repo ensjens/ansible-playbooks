@@ -6,7 +6,7 @@
 
 - name: Create directory for shell script
   file:
-    name="~/piholesync"
+    name="/home/pi/piholesync"
     state=directory
 
 - name: Copy script from template
