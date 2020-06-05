@@ -17,6 +17,6 @@
 - name: Add to crontab
   cron:
     name: piholesync
-    job: "/home/pi/piholesync/piholesync.rsync.sh"
+    job: "bash /home/pi/piholesync/piholesync.rsync.sh"
     state: present
     special_time: reboot
