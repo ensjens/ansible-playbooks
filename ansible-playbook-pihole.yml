@@ -3,6 +3,6 @@
 - name: Ansible Playbook for configuring Pi-Hole on Raspberry Pi
   hosts: pihole
   roles:
-    - pi
+    - pihole
   remote_user: pi
   become: yes
