@@ -3,6 +3,9 @@
 # user_pihole
 # group_pihole
 
+#inspired by: https://gist.github.com/bendews/e09edfc60e581ec4c686c4b70297f543
+# and https://github.com/gsemet/ansible-rpi-pihole
+
 ---
 
 
@@ -47,3 +50,7 @@
   register: dbg_install_pihole
   when: not pihole_installed
   tags: pihole
+  
+- name: Install inotify
+  apt:
+    name: inotify-tools
