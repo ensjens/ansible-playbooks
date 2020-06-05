@@ -13,7 +13,7 @@
     state=directory
     owner="pihole"
     group="pihole"
-    mode=0755
+    mode=0775
   tags: pihole
 
 #- name: Create pihole configuration
