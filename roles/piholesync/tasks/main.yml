@@ -21,8 +21,8 @@
     job: "bash /home/pi/piholesync/piholesync.rsync.sh"
     state: present
     special_time: reboot
-  register: addchrontab
+  register: addcrontab
 
 - name: reboot
   reboot:
-  when: addchrontab|changed
+  when: addcrontab is changed
