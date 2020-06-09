@@ -32,13 +32,13 @@
 #      masked: yes
 #      state: stopped
 
-  - name: stop timedatectl ntp service
-    become: yes
-    systemd:
-      name: systemd-timesyncd
-      enabled: no
-      masked: yes
-      state: stopped
+#  - name: stop timedatectl ntp service
+#    become: yes
+#    systemd:
+#      name: systemd-timesyncd
+#      enabled: no
+#      masked: yes
+#      state: stopped
 
   - name: Ensure chronyd is active
     become: yes
@@ -47,7 +47,13 @@
       state: started
 
  # Debian config path.  Change for CentOS
+#   - name: ensure chrony directory exists
+#    file:
+#      name="/etc/chrony"
+#      state=directory
+
   - name: install chrony.conf
+    become: yes
     template:
       src: ../templates/chrony-master.conf.j2
       dest: /etc/chrony/chrony.conf
