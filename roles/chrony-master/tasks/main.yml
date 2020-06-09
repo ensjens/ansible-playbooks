@@ -1,10 +1,10 @@
 #chrony-master
 ---
-  - name: Include vars
-    include_vars: ../vars/main.yml
+#  - name: Include vars
+#    include_vars: ../vars/main.yml
 
-  - name: Include vars
-    include_vars: ~/0/vault/secrets.yml
+#  - name: Include vars
+#    include_vars: ~/0/vault/secrets.yml
 
   - name: Set timezone to America/New_York
     timezone:
