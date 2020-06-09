@@ -34,7 +34,11 @@
 
   - name: stop timedatectl ntp service
     become: yes
-    shell: timedatectl set-ntp false
+    systemd:
+      name: systemd-timesyncd
+      enabled: no
+      masked: yes
+      state: stopped
 
   - name: Ensure chronyd is active
     service:
