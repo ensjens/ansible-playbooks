@@ -43,11 +43,11 @@
       mode: 0644
     notify: restart chronyd
 
-  - name: install chrony.keys
-    template:
-      src: ../templates/chrony.keys.j2
-      dest: /etc/chrony.keys
-      owner: root
-      group: chrony
-      mode: 0640
-    notify: restart chronyd
+#  - name: install chrony.keys
+#    template:
+#      src: ../templates/chrony.keys.j2
+#      dest: /etc/chrony.keys
+#      owner: root
+#      group: chrony
+#      mode: 0640
+#    notify: restart chronyd
