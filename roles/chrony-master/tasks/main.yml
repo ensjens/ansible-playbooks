@@ -47,7 +47,7 @@
 
   - name: install chrony.keys
     template:
-      src: ../templates/chrony.keys.j2
+      src: roles/chrony-master/templates/chrony.keys.j2
       dest: /etc/chrony/chrony.keys
       owner: root
       group: root
