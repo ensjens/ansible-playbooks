@@ -31,7 +31,9 @@ hwtimestamp *
 
 # Allow NTP client access from local network.
 # This is of course not enabled on the slaves
-allow {{ network }}
+allow 10.0.0.0/8
+allow 172.16.0.0/12
+allow 192.168.0.0/16
 
 # Serve time even if not synchronized to a time source.
 # In case my network gets isolated, I still want
