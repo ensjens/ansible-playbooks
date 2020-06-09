@@ -17,6 +17,7 @@
       state: absent
 
   - name: install chrony
+    become: yes
     package:
       name: chrony
       state: present
