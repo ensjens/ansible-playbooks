@@ -2,9 +2,10 @@
 
 # Use public servers from the pool.ntp.org project.
 # Please consider joining the pool (http://www.pool.ntp.org/join.html).
-server 0.debian.pool.ntp.org iburst xleave
-server 1.debian.pool.ntp.org iburst xleave
-server 2.debian.pool.ntp.org iburst xleave
+server 0.us.pool.ntp.org iburst xleave
+server 1.us.pool.ntp.org iburst xleave
+server 2.us.pool.ntp.org iburst xleave
+server 3.us.pool.ntp.org iburst xleave
 {% for host in groups['timekeepers'] | difference([inventory_hostname]) %}
 peer {{ hostvars[host].ansible_host }} iburst xleave
 {% endfor %}
