@@ -38,18 +38,18 @@
  # Debian config path.  Change for CentOS
   - name: install chrony.conf
     template:
-      src: roles/chrony-master/templates/chrony-master.conf.j2
+      src: ../templates/chrony-master.conf.j2
       dest: /etc/chrony/chrony.conf
       owner: root
       group: root
       mode: 0644
     notify: restart chronyd
 
-  - name: install chrony.keys
-    template:
-      src: roles/chrony-master/templates/chrony.keys.j2
-      dest: /etc/chrony/chrony.keys
-      owner: root
-      group: root
-      mode: 0640
-    notify: restart chronyd
+#  - name: install chrony.keys
+#    template:
+#      src: ../templates/chrony.keys.j2
+#      dest: /etc/chrony/chrony.keys
+#      owner: root
+#      group: root
+#      mode: 0640
+#    notify: restart chronyd
