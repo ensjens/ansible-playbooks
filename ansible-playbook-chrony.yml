@@ -1,0 +1,8 @@
+---
+- hosts: timekeeper
+  roles:
+    - chrony-master
+
+- hosts: !timekeeper$$$$$$$$$$$$
+  roles:
+    - chrony-slave
