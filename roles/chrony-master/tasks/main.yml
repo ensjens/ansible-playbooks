@@ -38,7 +38,7 @@
  # Debian config path.  Change for CentOS
   - name: install chrony.conf
     template:
-      src: ../templates/chrony-master.conf.j2
+      src: roles/chrony-master/templates/chrony-master.conf.j2
       dest: /etc/chrony/chrony.conf
       owner: root
       group: root
