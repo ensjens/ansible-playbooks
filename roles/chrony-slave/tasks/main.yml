@@ -17,24 +17,27 @@
       state: absent
 
   - name: install chrony
+    become: yes
     package:
       name: 'chrony'
       state: present
 
-  - name: Mask NTP service
-    systemd:
-      name: ntpd
-      enabled: no
-      masked: yes
-      state: stopped
-    ignore_errors: yes
+#  - name: Mask NTP service
+#    systemd:
+#      name: ntpd
+#      enabled: no
+#      masked: yes
+#      state: stopped
+#    ignore_errors: yes
 
   - name: Ensure chronyd is active
+    become: yes
     service:
       name: chronyd
       state: started
 
   - name: install chrony.conf
+    become: yes
     template:
       src: ../templates/chrony.conf.j2
       dest: /etc/chrony.conf

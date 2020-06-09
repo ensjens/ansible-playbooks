@@ -3,11 +3,13 @@
 ---
 # handlers file for chrony setup
 - name: restart crond
+  become: yes
   service:
     name: crond
     state: restarted
 
 - name: restart chronyd
+  become: yes
   service:
     name: chronyd
     state: restarted
