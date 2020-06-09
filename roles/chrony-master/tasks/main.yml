@@ -22,12 +22,20 @@
       name: chrony
       state: present
 
-  # I mask instead of uninstall, because some services  
-  # depend on NTP
+#  # I mask instead of uninstall, because some services  
+#  # depend on NTP
+#  - name: Mask NTP service
+#    become: yes
+#    systemd:
+#      name: ntpd
+#      enabled: no
+#      masked: yes
+#      state: stopped
+
   - name: Mask NTP service
     become: yes
     systemd:
-      name: ntpd
+      name: timesyncd
       enabled: no
       masked: yes
       state: stopped
