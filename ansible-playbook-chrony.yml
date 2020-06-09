@@ -4,5 +4,6 @@
     - chrony-master
 
 #- hosts: all,!timekeepers
-#  roles:
-#    - chrony-slave
+- hosts: raspberrypi
+  roles:
+    - chrony-slave
