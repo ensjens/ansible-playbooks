@@ -1,8 +1,10 @@
 ---
 - hosts: timekeepers
+  user: root
   roles:
     - chrony-master
 
 #- hosts: all,!timekeepers
+#  user:root
 #  roles:
 #    - chrony-slave
