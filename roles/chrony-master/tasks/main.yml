@@ -25,6 +25,7 @@
   # I mask instead of uninstall, because some services  
   # depend on NTP
   - name: Mask NTP service
+    become: yes
     systemd:
       name: ntpd
       enabled: no
