@@ -7,36 +7,55 @@
 #    include_vars: ~/0/vault/secrets.yml
 
   - name: Set timezone to America/New_York
+    become: yes
     timezone:
       name: America/New_York
     notify: restart crond
 
   - name: ensure ntpdate isn't installed
+    become: yes
     package:
       name: 'ntpdate'
       state: absent
 
   - name: install chrony
+    become: yes
     package:
       name: chrony
       state: present
 
-  # I mask instead of uninstall, because some services  
-  # depend on NTP
-  - name: Mask NTP service
-    systemd:
-      name: ntpd
-      enabled: no
-      masked: yes
-      state: stopped
+#  # I mask instead of uninstall, because some services  
+#  # depend on NTP
+#  - name: Mask NTP service
+#    become: yes
+#    systemd:
+#      name: ntpd
+#      enabled: no
+#      masked: yes
+#      state: stopped
+
+#  - name: stop timedatectl ntp service
+#    become: yes
+#    systemd:
+#      name: systemd-timesyncd
+#      enabled: no
+#      masked: yes
+#      state: stopped
 
   - name: Ensure chronyd is active
+    become: yes
     service:
       name: chronyd
       state: started
 
  # Debian config path.  Change for CentOS
+#   - name: ensure chrony directory exists
+#    file:
+#      name="/etc/chrony"
+#      state=directory
+
   - name: install chrony.conf
+    become: yes
     template:
       src: ../templates/chrony-master.conf.j2
       dest: /etc/chrony/chrony.conf
