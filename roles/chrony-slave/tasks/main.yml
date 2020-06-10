@@ -40,7 +40,7 @@
     become: yes
     template:
       src: ../templates/chrony.conf.j2
-      dest: /etc/chrony.conf
+      dest: /etc/chrony/chrony.conf
       owner: root
       group: root
       mode: 0644
@@ -49,7 +49,7 @@
 #  - name: install chrony.keys
 #    template:
 #      src: ../templates/chrony.keys.j2
-#      dest: /etc/chrony.keys
+#      dest: /etc/chrony/chrony.keys
 #      owner: root
 #      group: chrony
 #      mode: 0640
