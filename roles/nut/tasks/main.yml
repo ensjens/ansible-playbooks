@@ -1,4 +1,4 @@
-# nut/roles/main.yml
+# nut/tasks/main.yml
 ---
 - include_vars: "{{ansible_distribution}}.yml"
 
