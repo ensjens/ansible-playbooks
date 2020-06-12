@@ -1,13 +1,13 @@
 ---
 - hosts: nut-server
   roles:
-    - nut
+    - role: nut
       nut_nut_conf:
         MODE: netserver
 
 - hosts: nut-client
   roles:
-    - nut
+    - role: nut
       nut_nut_conf:
         MODE: netclient
     
