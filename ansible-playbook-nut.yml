@@ -1,5 +1,14 @@
 ---
-- hosts: nut
+- hosts: nut-server
   roles:
     - nut
+      nut_nut_conf:
+        MODE: netserver
+
+- hosts: nut-client
+  roles:
+    - nut
+      nut_nut_conf:
+        MODE: netclient
+    
     #run nut driver, server, and client
