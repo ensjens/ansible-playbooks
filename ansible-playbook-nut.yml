@@ -1,0 +1,5 @@
+---
+- hosts: nut
+  roles:
+    - nut
+    #run nut driver, server, and client
