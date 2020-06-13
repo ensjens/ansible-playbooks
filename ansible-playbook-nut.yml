@@ -35,11 +35,25 @@
           password: "{{nutmonitorpass}}"
           upsmon master: '' #special entry, doesn't follow normal ini format.
 
-- hosts: nutclient
+- hosts: nutclientvoid
   become: yes
   roles:
     - role: nut
       nut_nut_conf:
         MODE: netclient
-    
-    #run nut driver, server, and client
+        UPSD_OPTIONS: '""'
+        UPSMON_OPTIONS: '""'
+      nut_upsmon_conf:
+        DEADTIME: 15
+        FINALDELAY: 5
+        HOSTSYNC: 15
+        MINSUPPLIES: 1
+        MONITOR:
+          - "ups01@{{nutserverip}}:3493 1 monitor {{nutmonitorpass}} slave"
+        NOCOMMWARNTIME: 300
+        POLLFREQ: 5
+        POLLFREQALERT: 5
+        POWERDOWNFLAG: /etc/killpower
+        RBWARNTIME: 43200
+        SHUTDOWNCMD: '"/sbin/shutdown -h +0"'
+        RUN_AS_USER: "{{nut_user}}"
