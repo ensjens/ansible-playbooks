@@ -1,11 +1,13 @@
 ---
 - hosts: nutserver
+  become: yes
   roles:
     - role: nut
       nut_nut_conf:
         MODE: netserver
 
 - hosts: nutclient
+  become: yes
   roles:
     - role: nut
       nut_nut_conf:

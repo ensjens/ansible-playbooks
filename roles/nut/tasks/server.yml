@@ -1,7 +1,7 @@
 # nut/tasks/server.yml
 
 ---
-- name: install nut server {{nut_server_package}}
+- name: install nut server
   package: >
     name={{nut_server_package}}
     state=latest
