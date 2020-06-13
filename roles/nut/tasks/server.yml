@@ -26,3 +26,13 @@
     mode=0644
   notify:
     - restart nut-server
+
+- name: configure upsd.users
+  template: >
+    src=upsd.users.j2
+    dest={{nut_config_path}}/upsd.users
+    owner=root
+    group={{nut_user}}
+    mode=0640
+  notify:
+    - restart nut-server

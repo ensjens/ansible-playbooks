@@ -22,6 +22,16 @@
           - 127.0.0.1 3493
           - 172.16.10.2 3493
           - 172.16.10.4 3493
+      nut_upsd_users:
+        admin:
+          password: {{nutadminpass}}
+          actions:
+            - set
+            - fsd
+          instcmds: all
+        monitor:
+          password: {{nutmonitorpass}}
+          upsmon master: '' #special entry, doesn't follow normal ini format.
 
 - hosts: nutclient
   become: yes
