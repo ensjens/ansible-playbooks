@@ -5,6 +5,17 @@
     - role: nut
       nut_nut_conf:
         MODE: netserver
+      nut_ups_conf:
+        globals:
+          maxretry: 3
+          user: "{{nut_user}}"
+        upses:
+          upos01:
+            driver: usbhid-ups #https://networkupstools.org/docs/man/usbhid-ups.html
+            port: auto
+            desc: Server rack UPS
+            override.battery.charge.low: 20
+            override.battery.charge.warning: 30
 
 - hosts: nutclient
   become: yes
