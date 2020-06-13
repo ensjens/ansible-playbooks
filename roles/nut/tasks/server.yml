@@ -14,5 +14,5 @@
     group={{nut_user}}
     mode=0644
   notify:
-#    - restart nut-server
-#    - restart nut-driver
+    - restart nut-server
+    - restart nut-driver
