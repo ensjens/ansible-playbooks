@@ -11,6 +11,11 @@
     name={{nut_cgi_package}}
     state=latest
 
+- name: install apache2
+  package: >
+    name=apache2
+    state=latest
+
 - name: configure ups.conf
   template: >
     src=ups.conf.j2
