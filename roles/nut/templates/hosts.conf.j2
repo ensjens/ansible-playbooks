@@ -1,0 +1,10 @@
+#{{ansible_managed}}
+{%for entry in nut_host_conf%}
+{%if nut_host_conf[entry] is iterable and not nut_host_conf[entry] is string%}
+{%for repeat in nut_host_conf[entry]%}
+{{entry}} {{repeat}}
+{%endfor%}
+{%-else%}
+{%if nut_host_conf[entry] != None %}{{entry}} {{nut_host_conf[entry]}}{{'\n'}}{%endif%}
+{%-endif%}
+{%-endfor%}

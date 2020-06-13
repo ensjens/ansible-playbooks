@@ -1,2 +1,3 @@
 hosts.*
 local.yml.j2
+!hosts.conf.j2
