@@ -5,6 +5,8 @@
     - role: nut
       nut_nut_conf:
         MODE: netserver
+        UPSD_OPTIONS: '""'
+        UPSMON_OPTIONS: '""'
       nut_ups_conf:
         globals:
           maxretry: 3
