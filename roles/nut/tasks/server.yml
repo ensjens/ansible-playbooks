@@ -36,3 +36,13 @@
     mode=0640
   notify:
     - restart nut-server
+
+- name: install udev rules
+  copy: >
+    src=files/52-nut-usbups.rules
+    dest=/etc/udev/rules.d/52-nut-usbups.rules
+    mode=0644
+    group=root
+    owner=root
+  notify:
+    - restart nut-driver
