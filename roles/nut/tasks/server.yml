@@ -16,3 +16,13 @@
   notify:
     - restart nut-server
     - restart nut-driver
+
+- name: configure upsd.conf #to allow server to listen to other clients
+  template: >
+    src=upsd.conf.j2
+    dest={{nut_config_path}}/upsd.conf
+    owner=root
+    group={{nut_user}}
+    mode=0644
+  notify:
+    - restart nut-server
