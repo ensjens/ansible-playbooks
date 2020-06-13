@@ -13,6 +13,7 @@
   template:
     src: "piholesync.rsync.sh.j2"
     dest: "/home/pi/piholesync/piholesync.rsync.sh"
+  notify: reboot pihole host
 
 - name: Add to crontab
   cron:
@@ -21,8 +22,6 @@
     job: "bash /home/pi/piholesync/piholesync.rsync.sh"
     state: present
     special_time: reboot
-  register: addcrontab
+  notify: reboot pihole host
 
-- name: reboot
-  reboot:
-  when: addcrontab is changed
+

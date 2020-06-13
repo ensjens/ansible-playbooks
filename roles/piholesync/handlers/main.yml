@@ -1,0 +1,5 @@
+#piholesync handler
+
+---
+- name: reboot pihole host
+  reboot:
