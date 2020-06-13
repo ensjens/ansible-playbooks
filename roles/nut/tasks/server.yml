@@ -5,3 +5,14 @@
   package: >
     name={{nut_server_package}}
     state=latest
+
+- name: configure ups.conf
+  template: >
+    src=ups.conf.j2
+    dest={{nut_config_path}}/ups.conf
+    owner=root
+    group={{nut_user}}
+    mode=0644
+  notify:
+    - restart nut-server
+    - restart nut-driver
