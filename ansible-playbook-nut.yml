@@ -46,8 +46,11 @@
         RBWARNTIME: 43200
         SHUTDOWNCMD: '"/sbin/shutdown -h +0"'
         RUN_AS_USER: "{{nut_user}}"
+      nut_host_conf:
+        MONITOR:
+          - "ups01@localhost:3493"
 
-- hosts: nutclientvoid
+- hosts: nutclient
   become: yes
   roles:
     - role: nut

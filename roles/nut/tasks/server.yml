@@ -37,6 +37,16 @@
   notify:
     - restart nut-server
 
+- name: configure hosts.conf
+  template: >
+    src=hosts.conf.j2
+    dest={{nut_config_path}}/hosts.conf
+    owner=root
+    group={{nut_user}}
+    mode=0640
+#  notify:
+#    - restart nut-server
+
 - name: install udev rules
   copy: >
     src=files/52-nut-usbups.rules
