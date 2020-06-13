@@ -6,6 +6,11 @@
     name={{nut_server_package}}
     state=latest
 
+- name: install nut cgi package
+  package: >
+    name={{nut_cgi_package}}
+    state=latest
+
 - name: configure ups.conf
   template: >
     src=ups.conf.j2

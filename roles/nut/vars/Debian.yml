@@ -3,6 +3,7 @@
 ---
 nut_client_package: nut-client
 nut_server_package: nut-server
+nut_cgi_package: nut-cgi
 nut_client_service: nut-client
 nut_server_service: nut-server
 nut_driver_service: nut-driver
