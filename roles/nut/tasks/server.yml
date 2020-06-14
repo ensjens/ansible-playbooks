@@ -16,7 +16,7 @@
     name=apache2
     state=latest
 
--name: enable apache2 cgi module
+- name: enable apache2 cgi module
   apache2_module: >
     state=present
     name:cgi
