@@ -1,0 +1,2 @@
+#!/bin/bash
+mosquitto_pub -h {{mqtt_url}} -t "/power/$UPSNAME/notify/$NOTIFYTYPE" -m "$1" -u {{mqtt_username}} -P {{mqtt_password}}

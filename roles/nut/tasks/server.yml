@@ -23,6 +23,11 @@
   notify:
     - restart apache2
 
+- name: install mqtt client
+  package: >
+    name=mosquitto-clients
+    state=latest
+
 - name: configure ups.conf
   template: >
     src=ups.conf.j2
@@ -63,6 +68,14 @@
     mode=0644
 #  notify:
 #    - restart nut-server
+
+- name: configure nutnotifymqtt.sh
+  template: >
+    src=nutnotifymqtt.sh.j2
+    dest={{nut_config_path}}/mqttnotify/nutnotifymqtt.sh
+    owner=root
+    group={{nut_user}}
+    mode=0644
 
 - name: install udev rules
   copy: >
