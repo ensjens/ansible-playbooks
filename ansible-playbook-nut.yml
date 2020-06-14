@@ -38,7 +38,7 @@
         HOSTSYNC: 15
         MINSUPPLIES: 1
         MONITOR:
-          - "ups01@localhost:3493 1 monitor {{nutmonitorpass}} master"
+          - "ups01@{{nutserverip}}:3493 1 monitor {{nutmonitorpass}} master"
         NOCOMMWARNTIME: 300
         POLLFREQ: 5
         POLLFREQALERT: 5
