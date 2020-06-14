@@ -60,7 +60,7 @@
     dest={{nut_config_path}}/hosts.conf
     owner=root
     group={{nut_user}}
-    mode=0640
+    mode=0644
 #  notify:
 #    - restart nut-server
 
