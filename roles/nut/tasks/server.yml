@@ -16,6 +16,11 @@
     name=apache2
     state=latest
 
+-name: enable apache2 cgi module
+  apache2_module: >
+    state=present
+    name:cgi
+
 - name: configure ups.conf
   template: >
     src=ups.conf.j2
@@ -56,14 +61,6 @@
     mode=0640
 #  notify:
 #    - restart nut-server
-
-- name: configure apache conf
-  template: >
-    src=052-apache-nut.conf.j2
-    dest=/etc/apache2/sites-enabled/052-apache-nut.conf
-    owner=root
-    group=root
-    mode=0640
 
 - name: install udev rules
   copy: >
