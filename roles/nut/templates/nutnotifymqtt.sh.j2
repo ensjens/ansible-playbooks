@@ -1,2 +1,2 @@
 #!/bin/bash
-mosquitto_pub -h {{nut_mqtt_host}} -p {{nut_mqtt_port}} -t "/power/$UPSNAME/notify/$NOTIFYTYPE" -m "$1" -u {{nut_mqtt_username}} -P {{nut_mqtt_password}}
+mosquitto_pub -h {{nut_mqtt_host}} -p {{nut_mqtt_port}} -t "power/$UPSNAME/notify/$NOTIFYTYPE" -m "$1" -u {{nut_mqtt_username}} -P {{nut_mqtt_password}}
