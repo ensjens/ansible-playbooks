@@ -16,3 +16,8 @@
   when: >
     nut_nut_conf.MODE == 'netserver' or
     nut_nut_conf.MODE == 'standalone'
+- name: restart apache2
+  service: name=apache2 state=restarted
+  when: >
+    nut_nut_conf.MODE == 'netserver' or
+    nut_nut_conf.MODE == 'standalone'

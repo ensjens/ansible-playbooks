@@ -20,6 +20,8 @@
   apache2_module: >
     state=present
     name=cgid
+  notify:
+    - restart apache2
 
 - name: configure ups.conf
   template: >
