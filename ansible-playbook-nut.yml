@@ -45,16 +45,17 @@
         POWERDOWNFLAG: /etc/killpower
         RBWARNTIME: 43200
         NOTIFYCMD: '/etc/nut/mqttnotify/nutnotifymqtt.sh'
-        NOTIFYFLAG: 'ONLINE       SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'ONBATT       SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'LOWBATT      SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'FSD          SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'COMMOK       SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'COMMBAD      SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'SHUTDOWN     SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'REPLBATT     SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'NOCOMM       SYSLOG+WALL+EXEC'
-        NOTIFYFLAG: 'NOPARENT     SYSLOG+WALL+EXEC'
+        NOTIFYFLAG: 
+          - 'ONLINE       SYSLOG+WALL+EXEC'
+          - 'ONBATT       SYSLOG+WALL+EXEC'
+          - 'LOWBATT      SYSLOG+WALL+EXEC'
+          - 'FSD          SYSLOG+WALL+EXEC'
+          - 'COMMOK       SYSLOG+WALL+EXEC'
+          - 'COMMBAD      SYSLOG+WALL+EXEC'
+          - 'SHUTDOWN     SYSLOG+WALL+EXEC'
+          - 'REPLBATT     SYSLOG+WALL+EXEC'
+          - 'NOCOMM       SYSLOG+WALL+EXEC'
+          - 'NOPARENT     SYSLOG+WALL+EXEC'
         SHUTDOWNCMD: '"/sbin/shutdown -h +0"'
         RUN_AS_USER: "{{nut_user}}"
       nut_host_conf:
