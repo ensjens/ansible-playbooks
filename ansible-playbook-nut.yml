@@ -48,7 +48,7 @@
         RUN_AS_USER: "{{nut_user}}"
       nut_host_conf:
         MONITOR:
-          - "ups01@localhost:3493"
+          - "ups01@localhost:3493 "Rack UPS""
 
 - hosts: nutclient
   become: yes
