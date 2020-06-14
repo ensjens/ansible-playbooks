@@ -19,7 +19,7 @@
 - name: enable apache2 cgi module
   apache2_module: >
     state=present
-    name:cgi
+    name=cgi
 
 - name: configure ups.conf
   template: >
