@@ -69,6 +69,11 @@
 #  notify:
 #    - restart nut-server
 
+- name: Create directory for nutnotify shell script
+  file:
+    name="{{nut_config_path}}/mqttnotify"
+    state=directory
+
 - name: configure nutnotifymqtt.sh
   template: >
     src=nutnotifymqtt.sh.j2
