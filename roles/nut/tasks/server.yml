@@ -80,7 +80,7 @@
     dest={{nut_config_path}}/mqttnotify/nutnotifymqtt.sh
     owner=root
     group={{nut_user}}
-    mode=0644
+    mode=0750
 
 - name: install udev rules
   copy: >
