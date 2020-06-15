@@ -36,6 +36,9 @@
         monitor:
           password: "{{nutmonitorpass}}"
           upsmon master: '' #special entry, doesn't follow normal ini format.
+        admin:
+          password: "{{nutqnappass}}"
+          upsmon master: ''
       nut_upsmon_conf:
         DEADTIME: 15
         FINALDELAY: 60
