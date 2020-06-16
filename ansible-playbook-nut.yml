@@ -15,6 +15,7 @@
           ups01:
             driver: usbhid-ups #https://networkupstools.org/docs/man/usbhid-ups.html
             port: auto
+            serial: {{ups01serial}}
             desc: Server rack UPS
             override.battery.charge.low: 20
             override.battery.charge.warning: 30
@@ -22,6 +23,11 @@
             driver: dummy-ups
             port: ups01@localhost
             desc: UPS for QNAP
+#          ups02:
+#            driver: usbhid-ups
+#            port: auto
+#            serial: #############
+#            desc: Desktop UPS
       nut_upsd_conf:
         LISTEN:
           - "{{ansible_default_ipv4.address}} 3493"
