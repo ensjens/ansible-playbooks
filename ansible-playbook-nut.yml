@@ -55,6 +55,7 @@
         MINSUPPLIES: 1
         MONITOR:
           - "ups01@{{nutserverip}}:3493 1 monmaster {{nutmonitorpass}} master"
+#          - "ups02@{{nutserverip}}:3493 1 monmaster {{nutmonitorpass}} master"
         NOCOMMWARNTIME: 300
         POLLFREQ: 5
         POLLFREQALERT: 5
@@ -77,6 +78,7 @@
       nut_host_conf:
         MONITOR:
           - "ups01@{{nutserverip}}:3493 \"Rack UPS\""
+#          - "ups02@{{nutserverip}}:3493 \"Desktop UPS\""
 
 - hosts: nutclient
   become: yes
